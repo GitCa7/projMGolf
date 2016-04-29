@@ -22,7 +22,7 @@ public class courseExample extends ApplicationAdapter {
     PerspectiveCamera camera;
     terrainGraph terrain;
     
-    CameraInputController camController;
+    customController camController;
     private int width,length,squareLength;
     
     private int start = -5;
@@ -74,7 +74,7 @@ public class courseExample extends ApplicationAdapter {
         
 
         //camController = new customController(camera);
-        camController = new CameraInputController(camera);
+        camController = new customController(camera);
         
         Gdx.input.setInputProcessor(camController);
 
@@ -86,7 +86,7 @@ public class courseExample extends ApplicationAdapter {
         terrain.raiseInRange(190, 230, 100, 150, 5);
         
         //mesh = GeometryBuilder.buildPlane(width,length,squareLength);
-        camera.position.set(130f, -250f, 45f);
+        camera.position.set(130f, -300f, 55f);
     }
 
 
@@ -98,11 +98,7 @@ public class courseExample extends ApplicationAdapter {
     	//Vector3 camCoord = camera.position;
     	//System.out.println("Position of camera:\nX = " + camCoord.x + "\t\tY = " + camCoord.y + "\t\tZ = " + camCoord.z + "\n");
     	//
-    	try {
-    	    Thread.sleep(500);                 //1000 milliseconds is one second.
-    	} catch(InterruptedException ex) {
-    	    Thread.currentThread().interrupt();
-    	}
+    	
     	
     	
         /*
